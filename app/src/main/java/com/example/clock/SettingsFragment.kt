@@ -18,20 +18,16 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
         nightModeSwitch = view.findViewById(R.id.nightModeSwitch)
 
-        // Carregar o modo noturno do SharedPreferences
         val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
         isNightMode = sharedPreferences.getBoolean("night_mode", false)
 
-        // Atualizar o estado do switch de acordo com a preferência
         nightModeSwitch.isChecked = isNightMode
         updateMode()
 
-        // Ouve mudanças no switch
         nightModeSwitch.setOnCheckedChangeListener { _, isChecked ->
             isNightMode = isChecked
             updateMode()
 
-            // Salva a configuração no SharedPreferences
             sharedPreferences.edit().putBoolean("night_mode", isNightMode).apply()
         }
     }

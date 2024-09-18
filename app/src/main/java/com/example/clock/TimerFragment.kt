@@ -48,7 +48,6 @@ class TimerFragment : Fragment(R.layout.fragment_timer) {
             stopTimer()
         }
 
-        // Adiciona um ouvinte para reiniciar o temporizador quando o usuário altera os valores
         hourPicker.setOnValueChangedListener { _, _, _ -> resetTimerIfNeeded() }
         minutePicker.setOnValueChangedListener { _, _, _ -> resetTimerIfNeeded() }
     }
@@ -58,7 +57,7 @@ class TimerFragment : Fragment(R.layout.fragment_timer) {
         val minutesInMillis = minutePicker.value * 60 * 1000L
         val timeInMillis = hoursInMillis + minutesInMillis
 
-        countDownTimer?.cancel() // Cancela o temporizador anterior, se houver
+        countDownTimer?.cancel()
 
         countDownTimer = object : CountDownTimer(timeInMillis, 1000) {
             override fun onTick(millisUntilFinished: Long) {

@@ -6,13 +6,13 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class PagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
-    override fun getItemCount(): Int = 3 // Atualize o número de fragmentos
+    override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> TimerFragment()
             1 -> StopwatchFragment()
-            2 -> SettingsFragment() // Adicione o fragmento de configurações
+            2 -> SettingsFragment()
             else -> throw IllegalStateException("Invalid position $position")
         }
     }

@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         tabLayout.addTab(tabLayout.newTab().setText("Timer"))
         tabLayout.addTab(tabLayout.newTab().setText("Stopwatch"))
-        tabLayout.addTab(tabLayout.newTab().setText("Settings")) // Adiciona a aba de configurações
+        tabLayout.addTab(tabLayout.newTab().setText("Settings"))
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
