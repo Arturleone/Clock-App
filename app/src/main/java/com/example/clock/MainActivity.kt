@@ -1,8 +1,10 @@
 package com.example.clock
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import android.preference.PreferenceManager
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager2.widget.ViewPager2
 
@@ -10,6 +12,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val isNightMode = sharedPreferences.getBoolean("night_mode", false)
+
+        if (isNightMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         setContentView(R.layout.activity_main)
 
         val tabLayout: TabLayout = findViewById(R.id.tabLayout)

@@ -49,5 +49,5 @@ dependencies {
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.work:work-runtime-ktx:2.8.1")
-    implementation ("androidx.work:work-runtime-ktx:2.8.1")
+
 }
